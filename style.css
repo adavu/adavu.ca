@@ -4,6 +4,7 @@
 }
 #title {
   margin-top: 20px;
+  color: grey;
 }
 #welcome {
   background-image: url(https://microsoftstudios.com/hololens/wp-content/uploads/sites/4/2016/01/piano-03.jpg);
@@ -18,15 +19,18 @@
   margin-top: 60px;
 }
 #nav {
-  background-color: lightgrey;
-  border-bottom: 3px solid white;
-  padding-bottom: 20px;
+  background-color: white;
+  border-bottom: 1px solid black;
+  padding-bottom: 2px;
 }
 .blocker {
   margin-top: 20px;
   background-color: white;
-  border: 1px solid black;
+  color: black;
 }
 body {
-  background-color: grey;
+  background-color: white;
+}
+.center{
+  text-align: center;
 }
