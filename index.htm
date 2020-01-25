@@ -1,108 +1,336 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Add smooth scrolling to all links
+      $("a").on('click', function (event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function () {
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+    });
+  </script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+    crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
 </head>
+<title>Ada Vu</title>
+
 <body>
 
-  <div class="container">
 
+
+
+  <!-- menu bar above -->
+  <div class="nav-container">
     <div id="nav" class="row">
-      <div class="col-sm-2">
-        <h1 id="title"><strong>ADA VU</strong></h1>
+      <div class="col-sm-5">
+        <h1 id="title">
+          <strong>ADA VU</strong>
+        </h1>
       </div>
-      <div class="col-sm-9">
+
+      <div class="col-sm-7">
         <div id="buttons">
-        <a class="btn btn-primary btn-lg">Home</a>&nbsp;&nbsp;
-        <a class="btn btn-primary btn-lg">About Me</a>&nbsp;&nbsp;
-        <a class="btn btn-primary btn-lg">Portfolio</a>&nbsp;&nbsp;
-        <a class="btn btn-primary btn-lg">Blog</a>
+          <a href="#welcome">HOME</a>&nbsp;&nbsp;
+          <a href="#about">ABOUT</a>&nbsp;&nbsp;
+          <a href="#portfolio">PROJECTS</a>&nbsp;&nbsp;
+          <a href="#blog">BLOG</a>
         </div>
       </div>
       <div class="col-sm-1"></div>
     </div>
+  </div>
 
-    <div id="content" class="row">
-      <div class="col-sm-12">
 
-        <div id="welcome" class="row">
-          <div class="col-sm-5"></div>
-          <div class="col-sm-7">
+  <!-- everything included -->
+  <div id="content">
+    <div>
 
+      <!-- picture, w/o picture welcomemessage will not display -->
+      <div id="welcome">
+        <div class="row" style="margin: 0;">
+          <div class="col-sm-6">
             <div id="welcomemessage" class="row">
-            <div class="col-sm-6 col-sm-offset-3">
-            <center>
-              <p id="welcomename">Ada Vu</p>
-              <hr>
-              <h2 style="color:white">Hello</h2>
-              <hr>
-            </center>
+              <div class="col-sm-6 col-sm-offset-3">
+                <center>
+                  <h2 id="intro">Hello, I'm</h2>
+                  <hr>
+                  <p id="welcomename">Ada Vu</p>
+                </center>
+              </div>
             </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="container">
+
+
+      <div id="about"></div>
+      <div class="row blocker">
+
+        <!-- picture of me -->
+        <div class="col-sm-4">
+          <div id="picture">
+            <img id="profilepic" src="profilePic.jpg" class="rotateimg90">
+          </div>
+        </div>
+
+        <!-- my about me description -->
+        <div class="col-sm-8">
+          <div id="aboutme" class="row description">
+            <h1>About Me</h1>
+            <div class="row">
+              <p id="paragraph">Hello, I'm Ada, a student at the University of Waterloo studying Computing and Financial Management. In high
+                school, I took both computer science and accounting and enjoyed both subjects, for the most part. Thus, why
+                I am in the program that I am in.
+              </p>
+              <br>
+              <p>During my years in high school, I took part in side projects and extracurriculars that dealt with my program.
+                This website being one of them. I started this project for fun to learn HTML and CSS, I had no thoughts on
+                creating a website but on my journey I decided why not. I created some mobile game apps in Swift for iOS
+                which I have showcased below. I also participated in Google Code-In which is a programming competition directed
+                for high school students to be exposed to open source. Aside from computer projects, I also took part in
+                finance extracurriculars. I went to a Women in Capital Markets conference where they expose female high school
+                students about careers in STEM and Business.
+              </p>
+              <br>
+              <p>At the moment, I have no direct route of what I want to do. During university, I hope to experiment more through
+                co-op and other extracurriculars.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="portfolio"></div>
+      <!--PORTFOLIO STARTS-->
+      <div class="subtitle">
+        <h1>Videos</h1>
+        <h4>Videos Edited by Ada Vu</h4>
+      </div>
+      <div class="row">
+        <!-- first video, name everything one -->
+        <div class="col-sm-7">
+          <div id="vidOne">
+            <video width="100%" height="auto" controls>
+              <source src="YPI.mp4" type="video/mp4"> Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+
+        <!-- description for video one -->
+        <div class="col-sm-5">
+          <div id="descriptionVid" class="row description">
+            <p>
+              <h3>YPI &#8286; Released 170606</h3>
+            </p>
+            <p>This video introduces a charity called "The Haven on the Queensway" and its values pertaining to the social issue
+              of poverty.</p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="subtitle">
+        <h1>Games</h1>
+        <h4>Games Developed by Ada Vu</h4>
+      </div>
+
+      <!-- first game, name everything one -->
+      <div class="row portfolio-row">
+        <div class="col-md-7">
+          <div id="gameOne">
+
+            <div class="slideshow-container">
+              <div class="mySlides1">
+                <img class="picForGame" src="game1.png ">
+              </div>
+
+              <div class="mySlides1">
+                <img class="picForGame" src="game2.png">
+              </div>
+
+              <div class="mySlides1">
+                <img class="picForGame" src="game3.png">
+              </div>
+
+              <div class="mySlides1">
+                <img class="picForGame" src="game4.png">
+              </div>
+
+              <div class="mySlides1">
+                <img class="picForGame" src="game5.png">
+              </div>
+
+              <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+            </div>
+
+            <div class="dots">
+              <span class="dot" onclick="currentSlide(1, 0)"></span>
+              <span class="dot" onclick="currentSlide(2, 0)"></span>
+              <span class="dot" onclick="currentSlide(3, 0)"></span>
+              <span class="dot" onclick="currentSlide(4, 0)"></span>
+              <span class="dot" onclick="currentSlide(5, 0)"></span>
             </div>
 
           </div>
         </div>
 
-        <div id="about" class="row blocker">
-          <div class="col-sm-10 col-sm-offset-1"></div>
-          <center><h1>About Me</h1></center>
-          <div class="row"><div class="col-sm-10 col-sm-offset-1">
-          <p><h5>Lorem ipsum dolor sit amet, ada enim essent equidem mei. Duo cu meis adhuc. Ut cum elit choro utroque, cum at ipsum inimicus concludaturque. No nec invidunt erroribus rationibus, nulla corpora nec ad. In vim sanctus commune ancillae, dico consectetuer his ut.
-            His ea quodsi euismod. Vim omnium delicata id, at odio dissentiet sea, vix accumsan placerat ad. Dicat ornatus theophrastus ut usu, ut rebum laudem apeirian eum, lorem mollis officiis vis ad. Mutat velit feugait usu cu, eu vel probo inermis. Malis assueverit ei cum.
-            Salutatus adipiscing repudiandae ne his. At duo tamquam consequat. Eum primis detraxit inciderint ne, te eum tota veniam, laudem voluptua definiebas mea at. His et phaedrum splendide, eam eu feugiat facilis disputationi.
-            Sit velit voluptaria in, mea vidisse accumsan invidunt ei. In sit nostrum adipisci omittantur, tritani docendi persequeris vix eu. Esse vide ex sit, ut efficiendi theophrastus mel. Ut aeque voluptaria nam.
-            Veritus adversarium sea te, nec stet habeo contentiones et. Mel an tractatos disputando, dolores explicari eum eu. Lorem luptatum phaedrum sed at. Ne vis quaestio tincidunt. Timeam iracundia usu cu, an est tempor equidem sapientem, has in mucius suscipiantur. Id pertinax definitionem vix.</h5></p>
-        </div></div></div>
-          <br>
+        <!-- description for game one -->
+        <div class="col-md-5">
+          <div id="descriptionGame" class="row description">
+            <p>
+              <h3>SPEEDY &#8286; Released 180101</h3>
+            </p>
+            <p>Developed a mobile game in Swift for iOS using Xcode. Implemented a game where users compete against time to
+              pick colours from the board that match the colours displayed using buttons, images and linking actions to objects.
+              Used this experience to achieve my goal in learning Swift and releasing my own mobile gaming app.
+            </p>
 
-        <div id="portfolio" class="row blocker">
-          <center><h1>Portfolio</h1></center>
-            <div class="col-sm-4">
-              <p><center><h3>Simple Canadian</h3></center></p>
-              <br>
-              <center><img scr="http://petervu.ca/simplecanadian.jpg" alt="Simple Canadian Website" style="width:250px;height:150px"></center>
-              <br>
-              <center><a href="http://petervu.ca/" class="btn btn-default btn-md">Visit Site</a></center>
-            </div>
-            <div class="col-sm-4">
-              <p><center><h3>Beat Trump</h3></center></p>
-              <br>
-              <center><img scr="http://petervu.ca/simplecanadian.jpg" alt="Are You Better Than Trump" style="width:250px;height:150px"></center>
-              <br>
-              <center><a href="http://petervu.ca/" class="btn btn-default btn-md">Visit Site</a></center>
-            </div>
-            <div class="col-sm-4">
-              <p><center><h3>The Recipe Index</h3></center></p>
-              <br>
-              <center><img scr="http://petervu.ca/simplecanadian.jpg" alt="Recipe Index" style="width:250px;height:150px"></center>
-              <br>
-              <center><a href="http://petervu.ca/" class="btn btn-default btn-md">Visit Site</a></center>
-            </div>
+          </div>
         </div>
-          <br>
+      </div>
 
-        <div id="blog" class="row blocker">
-          <div class="col-sm-10 col-sm-offset-1"></div>
-          <center><h1>Blog</h1></center>
-          <p><center><h4>This is my personal Blog</h4></center></p>
-          <br>
-            <div class="row"><div class="col-sm-10 col-sm-offset-1">
-            <center><img scr="http://petervu.ca/simplecanadian.jpg" alt="My Blog" style="width:825px;height:500px"></center>
-            <br>
-            <p><right><h5>This is a blog exploring all the places that I've visited and food that I've had</h5></right></p>
-            <br>
-            <a class="btn btn-default btn-md">View Site</a>
-            </div></div>
+
+      <!-- second game, description for game two-->
+      <div class="row portfolio-row">
+        <div class="col-md-5">
+          <div id="descriptionGame" class="row description">
+            <p>
+              <h3>MEMORY GAME &#8286; Released 171101</h3>
+            </p>
+            <p>Developed a mobile game in Swift for iOS using Xcode. Implemented a game where players turn over pairs of matching
+              cards using buttons, shapes, and linking actions to objects. Gained knowledge working with iOS and Xcode.
+            </p>
+
+          </div>
         </div>
 
 
+
+        <!-- second game pictures -->
+        <div class="col-md-7">
+          <div id="gameTwo" class="row">
+
+            <div class="slideshow-container">
+              <div class="mySlides2">
+                <img class="picForGame" src="game6.png ">
+              </div>
+
+              <div class="mySlides2">
+                <img class="picForGame" src="game7.png">
+              </div>
+
+              <div class="mySlides2">
+                <img class="picForGame" src="game8.png">
+              </div>
+
+              <div class="mySlides2">
+                <img class="picForGame" src="game9.png">
+              </div>
+
+              <div class="mySlides2">
+                <img class="picForGame" src="game10.png">
+              </div>
+
+              <div class="mySlides2">
+                <img class="picForGame" src="game11.png">
+              </div>
+
+              <div class="mySlides2">
+                <img class="picForGame" src="game12.png">
+              </div>
+
+              <div class="mySlides2">
+                <img class="picForGame" src="game13.png">
+              </div>
+
+              <a id="buttonGame2" class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+              <a id="buttonGame2" class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+            </div>
+
+            <div class="dots">
+              <span class="dot" onclick="currentSlide(1, 1)"></span>
+              <span class="dot" onclick="currentSlide(2, 1)"></span>
+              <span class="dot" onclick="currentSlide(3, 1)"></span>
+              <span class="dot" onclick="currentSlide(4, 1)"></span>
+              <span class="dot" onclick="currentSlide(5, 1)"></span>
+              <span class="dot" onclick="currentSlide(6, 1)"></span>
+              <span class="dot" onclick="currentSlide(7, 1)"></span>
+              <span class="dot" onclick="currentSlide(8, 1)"></span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- PORTFOLIO ENDS -->
+
+
+      <div id="blog" class="row blocker">
+
+        <div class="col-sm-10 col-sm-offset-1">
+          <div id="blogContent" class="row">
+            <center>
+              <h1>Blog</h1>
+            </center>
+            <p>
+              <center>
+                <h4>My personal Blog exploring the places that I have visited</h4>
+              </center>
+            </p>
+            <br>
+            <p>
+              <center>
+                <h5>To Be Updated!</h5>
+              </center>
+            </p>
+            <div class="row">
+              <div class="col-sm-10 col-sm-offset-1">
+                <center>
+                  <button class="btn btn-default btn-md" onclick="window.location.href ='https://www.instagram.com/ada.vu/';">View Instagram &#8811;</button>
+                </center>
+              </div>
+            </div>
+          </div>
+        </div>
 
       </div>
-    </div>
 
+
+    </div>
   </div>
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+    crossorigin="anonymous"></script>
+  <script src="interactive.js"></script>
 </body>
+
 </html>
